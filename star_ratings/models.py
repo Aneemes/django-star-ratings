@@ -13,7 +13,7 @@ from django.utils.translation import gettext as _
 from model_utils.models import TimeStampedModel
 
 from . import app_settings, get_star_ratings_rating_model_name, get_star_ratings_rating_model
-
+import uuid
 
 def _clean_user(user):
     if not app_settings.STAR_RATINGS_ANONYMOUS:
@@ -79,7 +79,7 @@ class AbstractBaseRating(models.Model):
     average = models.DecimalField(max_digits=6, decimal_places=3, default=Decimal(0.0))
 
     content_type = models.ForeignKey(ContentType, null=True, blank=True, on_delete=models.CASCADE)
-    object_id = models.PositiveIntegerField(null=True, blank=True)
+    object_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     content_object = GenericForeignKey()
 
     objects = RatingManager()
