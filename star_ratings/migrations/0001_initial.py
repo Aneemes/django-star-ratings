@@ -26,7 +26,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Rating',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
                 ('count', models.PositiveIntegerField(default=0)),
                 ('total', models.PositiveIntegerField(default=0)),
                 ('average', models.DecimalField(decimal_places=3, max_digits=6, default=Decimal('0'))),
