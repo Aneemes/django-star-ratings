@@ -4,6 +4,8 @@ django-star-ratings
 
 |Build Status| |codecov.io| |Documentation Status|
 
+This fork is modified to work with object_pk being uuid instead of PositiveIntegerField in the main repo.
+
 Python 3 compatible ratings for Django.
 
 Add ratings to any Django model with a template tag.
