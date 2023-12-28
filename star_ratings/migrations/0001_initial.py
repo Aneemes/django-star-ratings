@@ -8,6 +8,7 @@ import model_utils.fields
 import django.utils.timezone
 from django.conf import settings
 import uuid
+
 dependancies = [
     migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ('contenttypes', '0001_initial'),

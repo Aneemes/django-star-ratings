@@ -1,6 +1,6 @@
 from __future__ import division, unicode_literals
 from decimal import Decimal
-
+import uuid
 import swapper
 from warnings import warn
 from django.conf import settings
