@@ -1,6 +1,6 @@
 from __future__ import division, unicode_literals
 from decimal import Decimal
-import uuid
+
 import swapper
 from warnings import warn
 from django.conf import settings
@@ -79,7 +79,7 @@ class AbstractBaseRating(models.Model):
     average = models.DecimalField(max_digits=6, decimal_places=3, default=Decimal(0.0))
 
     content_type = models.ForeignKey(ContentType, null=True, blank=True, on_delete=models.CASCADE)
-    object_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    object_id = models.PositiveIntegerField(null=True, blank=True)
     content_object = GenericForeignKey()
 
     objects = RatingManager()
